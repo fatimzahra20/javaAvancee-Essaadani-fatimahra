@@ -1,0 +1,150 @@
+##Description Globale du Projet:
+
+La Plateforme Intelligente de Gestion des Tickets du Mondial 2030 est un système complet permettant la gestion de bout en bout des billets numériques : consultation des matchs, achat sécurisé, génération des tickets, contrôle d’accès lors des matchs, et détection automatique de la fraude.
+Le projet intègre des technologies avancées telles que l’IA pour identifier les comportements suspects et une blockchain interne pour garantir l’authenticité et la traçabilité des tickets.
+L’objectif est de fournir une plateforme sécurisée, scalable et performante, capable de gérer des millions d’utilisateurs durant l’évènement mondial.
+
+Architecture du Projet
+
+Le projet adopte une architecture multi-couches combinée à des modules spécialisés :
+
+1️⃣ Couche Présentation (Frontend)
+
+Interface utilisateur : achat de tickets, consultation des matchs, tableau de bord admin
+
+Technologies possibles : React / Angular / Vue.js
+
+2️⃣ Couche API Backend
+
+Développée en Spring Boot / Node.js / Django
+
+Expose des endpoints REST ou GraphQL
+
+Gère :
+
+authentification
+
+transactions d'achat
+
+génération des tickets et QR codes
+
+communication avec modules IA et blockchain
+
+3️⃣ Couche Services Métier
+
+Services principaux :
+
+UserService – gestion utilisateurs
+
+MatchService – gestion des matchs
+
+TicketService – génération et gestion des tickets
+
+PaymentService – gestion des paiements
+
+SeatAllocationService – algorithme d’optimisation des places
+
+FraudDetectionService – détection IA
+
+BlockchainService – gestion des blocs
+
+AccessControlService – validation d’accès
+
+4️⃣ Couche Données (DB Layer)
+
+MySQL / PostgreSQL (données principales)
+
+MongoDB (logs et traces IA)
+
+Redis (cache et sessions)
+
+Tables principales :
+users, matches, tickets, payments, stadiums, sections, blockchain_records, fraud_logs
+
+5️⃣ Modules Spécialisés
+🔸 Module Blockchain
+
+Chaque ticket acheté génère un bloc contenant : hash, previousHash, timestamp
+
+Assure authenticité + impossibilité de falsification
+
+🔸 Module IA
+
+Analyse des comportements d’achat
+
+Détection des fraudes : doublons, revente massive, anomalies
+
+🧩 Classes Principales (UML)
+🔹 Classe User
+
+Gère les informations du compte et l’historique d’achat.
+
+🔹 Classe Match
+
+Contient les informations d’un match (date, stade, équipes…).
+
+🔹 Classe Stadium
+
+Représente un stade du Mondial.
+
+🔹 Classe Section
+
+Zone du stade (VIP, Tribune, etc.).
+
+🔹 Classe Ticket
+
+Représente le billet numérique.
+Généré avec un QR code + identifiant unique.
+
+🔹 Classe Payment
+
+Gère le paiement d’un ou plusieurs tickets.
+
+🔹 Classe FraudDetection
+
+Module IA analysant les comportements suspects.
+
+🔹 Classe BlockchainRecord
+
+Trace la création et transfert des tickets.
+
+🔹 Classe AccessControl
+
+Scanne et valide le ticket à l’entrée du stade.
+
+🔹 Classe SeatAllocation
+
+Attribue automatiquement la meilleure place disponible.
+
+🧾 Fonctionnalités Principales
+
+✔ Achat de tickets
+✔ Paiement sécurisé
+✔ QR Code unique pour chaque ticket
+✔ Authentification des tickets via blockchain
+✔ Détection de fraude par IA
+✔ Contrôle d’accès aux stades
+✔ Gestion des stades et sections
+✔ Tableau de bord administrateur
+
+🚀 Objectifs
+
+Assurer une gestion fiable, rapide et transparente des tickets du Mondial 2030
+
+Prévenir les fraudes numériques
+
+Gérer la charge massive des spectateurs
+
+Améliorer la sécurité et l’expérience utilisateur
+
+📦 Prochaines Étapes
+
+Développement du backend
+
+Intégration du frontend
+
+Implémentation du modèle IA
+
+Mise en place de la blockchain interne
+
+Déploiement cloud (AWS/Azure/GCP)
